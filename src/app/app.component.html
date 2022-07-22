@@ -1,0 +1,54 @@
+<div class="down">
+  <a class="mainmenubtn">Порода</a>
+  <div class="ddown">
+    <button class="a1" *ngIf="!AbesCat" (click)="Breed1()"  >Абессинець</button>
+    <button class="a1" *ngIf="AbesCat" (click)="Breed1()"  >Абессинець</button>
+    <button class="b1" *ngIf="!AfricCat" (click)="Breed2()" >Африканська</button>
+    <button class="b1" *ngIf="AfricCat" (click)="Breed2()" >Африканська</button>
+    <button class="c1" *ngIf="!StrtCat" (click)="Breed3()"  >Бродяга</button>
+    <button class="c1" *ngIf="StrtCat" (click)="Breed3()"  >Бродяга</button>
+  </div>
+</div>
+<div class="down1">
+  <a class="makeDown">Колір</a>
+  <div class="indown">
+    <button class="ab" *ngIf="All" (click)="checkAll()">All</button>
+    <button class="ab" *ngIf="!All" (click)="checkAll()">All</button>
+
+    <button class="aa" *ngIf="isCollapsed" (click)="toggleCollapse()">Рудий</button>
+    <button  class="aa" *ngIf="!isCollapsed" (click)="toggleCollapse()">Рудий</button>
+    <button  class="bb" *ngIf="isBlack" (click)="toggleCollapse1()">Чорний</button>
+    <button  class="bb" *ngIf="!isBlack" (click)="toggleCollapse1()">Чорний</button>
+    <button  class="cc" *ngIf="isGrey" (click)="toggleCollapse2()">Сірий</button>
+    <button  class="cc" *ngIf="!isGrey" (click)="toggleCollapse2()">Сірий</button>
+    <button  class="dd" *ngIf="isMix" (click)="toggleCollapse4()">Плями</button>
+    <button  class="dd" *ngIf="!isMix" (click)="toggleCollapse4()">Плями</button>
+    <button  class="ee" *ngIf="isWhite" (click)="toggleCollapse3()">Білий</button>
+    <button  class="ee" *ngIf="!isWhite" (click)="toggleCollapse3()">Білий</button>
+  </div>
+</div>
+<div  class="max-w-2xl container mx-auto pt-5">
+ 
+
+    
+  <app-product  *ngIf="isCollapsed || StrtCat || All" [product]= "products[0]"></app-product>
+<app-product *ngIf=" isBlack || All || AbesCat  " [product]= "products[1]"></app-product>
+<app-product *ngIf=" isGrey || All || AbesCat " [product]= "products[2]"></app-product>
+<app-product *ngIf="isWhite || All || AfricCat " [product]= "products[3]"></app-product>
+<app-product *ngIf=" isMix || All || AfricCat " [product]= "products[4]"></app-product>
+<app-product *ngIf=" isMix || All || StrtCat " [product]= "products[5]"></app-product>
+<app-product *ngIf=" isMix || All || StrtCat " [product]= "products[6]"></app-product>
+<app-product *ngIf="isGrey || All || AbesCat" [product]= "products[7]"></app-product>
+<app-product *ngIf=" isMix || All || AfricCat " [product]= "products[8]"></app-product>
+<app-product *ngIf="isCollapsed || All " [product]= "products[9]"></app-product></div>
+<!--&& !isBlack && isGrey && !isWhite && !isMix
+!isCollapsed && && !isGrey && !isWhite && !isMix
+!isCollapsed && !isBlack && && !isWhite && !isMix
+!isCollapsed && !isBlack && !isGrey && && !isMix  
+!isCollapsed && !isBlack && !isGrey && !isWhite &&
+!isCollapsed && !isBlack && !isGrey && !isWhite &&
+!isCollapsed && !isBlack && !isGrey && !isWhite &&
+!isCollapsed && !isBlack && && !isWhite && !isMix
+!isCollapsed && !isBlack && !isGrey && !isWhite &&
+
+-->
